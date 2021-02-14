@@ -1,0 +1,39 @@
+<div id="recipe-details">
+  <p class="header-menu">
+    <span class="details-page">Recipe Details</span>
+    <span class="back-to-list"><%= link_to "List of Recipes", recipes_url %></span>
+  </p>
+  <h1></h1>
+  <hr />
+  <% if @recipe.present? %>
+    <div class="row view-recipe">
+      <div class="col-md-7 view-image">
+        <%= image_tag @recipe.photo.url.to_s %>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3"><strong>Title</strong></div>
+          <div class="col-md-9"><p><%= @recipe.title %></p></div>
+        </div>
+        <% if @recipe.fields.key?(:tags) %>
+          <div class="row">
+            <div class="col-md-3"><strong>List of Tags</strong></div>
+            <div class="col-md-9">
+              <p><%= @recipe.tags.map(&:name).join ', ' %></p>
+            </div>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="col-md-3"><strong>Description</strong></div>
+          <div class="col-md-9"><p><%= @recipe.description %></p></div>
+        </div>
+        <% if @recipe.fields.key?(:chef) %>
+          <div class="row">
+            <div class="col-md-3"><strong>Chef Name</strong></div>
+            <div class="col-md-9"><p><%= @recipe.chef.name %></p></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

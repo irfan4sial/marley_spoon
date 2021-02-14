@@ -1,0 +1,22 @@
+<div id="recipes-list">
+  <h1>Recipes List</h1>
+  <hr />
+  <% if @recipes.present? %>
+    <% @recipes.each_with_index do |recipe, index| %>
+      <div class="row recipe-items">
+        <div class="col-md-8">
+          <p><%= recipe.title %></p>
+        </div>
+        <div class="col-md-2">
+          <%= image_tag recipe.photo.url.to_s %>
+        </div>
+        <div class="col-md-2 view-details">
+          <%= link_to 'View Details', recipe_path(id: recipe.id) %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <% if !@recipes.present? %>
+    <p id="no_invoice">Oops! Currently No Recipe Created</p>
+  <% end %>
+</div>

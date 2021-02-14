@@ -1,0 +1,39 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#recipes-list {
+  padding: 25px 50px;
+  .recipe-items {
+    background: #efefef;
+    margin: 0px 0px 10px 0px;
+    padding: 10px 0px;
+    img {
+      width: 200px;
+    }
+  }
+  .view-details {
+    text-align: right;
+    line-height: 120px;
+  }
+}
+
+#recipe-details {
+  padding: 25px 50px;
+  .header-menu {
+    .details-page {
+      font-size: 32px;
+    }
+    .back-to-list {
+      float: right;
+      font-size: 22px;
+    }
+  }
+  .view-recipe {
+    .view-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
